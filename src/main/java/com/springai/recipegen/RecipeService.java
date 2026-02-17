@@ -25,16 +25,23 @@ public class RecipeService {
                         String dietaryRestrictions) {
 
                 String template = """
-                                Create a detailed recipe using the following inputs:
+                                You are a professional chef. Create a high-quality recipe.
 
                                 Ingredients: {ingredients}
-                                Cuisine type: {cuisine}
-                                Dietary restrictions: {dietaryRestrictions}
+                                Cuisine: {cuisine}
+                                Dietary: {dietaryRestrictions}
 
-                                The recipe should include:
-                                1. Recipe title
-                                2. Ingredients list with quantities
-                                3. Step-by-step cooking instructions
+                                Structure:
+                                - Title
+                                - Cuisine & Dietary
+                                - Ingredients (with quantities)
+                                - Instructions (numbered steps)
+                                - Chef's Tip
+
+                                Rules:
+                                - Strict dietary compliance.
+                                - Concise, beginner-friendly.
+                                - Use Markdown.
                                 """;
 
                 PromptTemplate promptTemplate = new PromptTemplate(template);
